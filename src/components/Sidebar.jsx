@@ -4,6 +4,7 @@ import {
   decrementQuantity,
   incrementQuantity,
   removeItem,
+  setItems,
 } from "../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,10 +12,16 @@ import { motion, AnimatePresence } from "framer-motion";
 function Sidebar({ items, handleCloseBar }) {
   const dispatch = useDispatch();
 
-  // Calculate total price of all items
   const totalPrice = items.reduce((total, product) => {
     return total + product.totalPrice;
   }, 0);
+
+  const clearCartHandler = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("cartItems");
+    dispatch(setItems([]));
+    handleCloseBar(e);
+  };
 
   return (
     <AnimatePresence>
@@ -27,7 +34,11 @@ function Sidebar({ items, handleCloseBar }) {
       >
         <div className="px-10 py-8 flex justify-between">
           <h3 className="text-xl font-bold"> Cart Items</h3>
-          <RxCross1 size={22} className="" onClick={(e) => handleCloseBar(e)} />
+          <RxCross1
+            size={22}
+            className="hover:cursor-pointer"
+            onClick={(e) => handleCloseBar(e)}
+          />
         </div>
         <div className="px-10 py-5">
           <div className="flow-root">
@@ -102,13 +113,16 @@ function Sidebar({ items, handleCloseBar }) {
             <div className="px-10 flex justify-between py-4">
               <span className="font-bold text-xl">Total Price :</span>
               <span className="font-bold text-xl">
-                {" "}
                 ${totalPrice.toFixed(2)}
               </span>
             </div>
 
             <div className="flex justify-center py-8">
-              <button className=" rounded-md bg-[#6f91ff] px-20 py-2.5 text-center text-md font-medium text-white  outline-none border-none">
+              <button
+                type="button"
+                className=" rounded-md bg-[#6f91ff] px-20 py-2.5 text-center text-md font-medium text-white  outline-none border-none"
+                onClick={clearCartHandler}
+              >
                 Check out
               </button>
             </div>

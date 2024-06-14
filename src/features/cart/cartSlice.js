@@ -13,7 +13,6 @@ const cartSlice = createSlice({
     setItems: (state, action) => {
       state.items = action.payload;
     },
-
     addItem: (state, action) => {
       const { id } = action.payload.product;
       const existingItemIndex = state.items.findIndex((item) => item.id === id);
@@ -69,6 +68,7 @@ const cartSlice = createSlice({
 export const {
   addItem,
   setItems,
+  clearItems,
   removeItem,
   incrementQuantity,
   decrementQuantity,

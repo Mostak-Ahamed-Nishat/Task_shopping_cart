@@ -1,5 +1,3 @@
-// Header.js
-
 import { FaCartArrowDown } from "react-icons/fa";
 import styles from "../styles/styles";
 import { motion } from "framer-motion";
@@ -18,7 +16,6 @@ import {
   incrementQuantity,
   decrementQuantity,
 } from "../features/cart/cartSlice";
-
 import Logo from "../../public/logo.png";
 
 function Header() {
@@ -38,11 +35,9 @@ function Header() {
 
   useEffect(() => {
     setItemCount(items.length);
-    // Store items array in localStorage whenever items change
     localStorage.setItem("cartItems", JSON.stringify(items));
   }, [items]);
 
-  // scroll top fixed
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 70);
@@ -55,6 +50,7 @@ function Header() {
 
   const handleCloseBar = (e) => {
     e.preventDefault();
+    console.log("Toggling cart sidebar");
     setIsCartOpen(!isCartOpen);
   };
 
@@ -99,14 +95,10 @@ function Header() {
       <div
         className={`${styles.section} ${styles.normalFlex} justify-between relative`}
       >
-        {/* Logo */}
-
         <img src={Logo} alt="" className=" h-10" />
 
-        {/* Search bar */}
         <SearchInput handleSearch={handleChange} />
 
-        {/* Cart icon with item count */}
         <div className="relative cursor-pointer">
           <FaCartArrowDown size={30} onClick={handleCloseBar} />
           <div className="absolute left-6 top-[-10px] bg-white rounded-full w-7 h-7 text-center flex items-center justify-center ">
@@ -114,7 +106,6 @@ function Header() {
           </div>
         </div>
 
-        {/* Cart sidebar */}
         {isCartOpen && (
           <motion.div transition={{ duration: 1 }}>
             <Sidebar
