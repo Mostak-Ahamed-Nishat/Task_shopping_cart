@@ -9,12 +9,10 @@ A reactjs e-commerce shopping cart where people can view products and add to car
 ## 📖 Table of Contents
 
 - [**About the project**](#about-the-project)
-  - [Screenshots](#screenshots)
   - [Technologies](#technologies)
 - [**Getting Start**](#getting-start)
   - [Prerequisites](#prerequisites)
   - [Run Locally](#run-locally)
-  - [Environment Variables](#environment-variables)
   - [Deployemnt](#deployemnt)
 - [**Author**](#author)
 
@@ -33,12 +31,10 @@ A reactjs e-commerce shopping cart where people can view products and add to car
 
   ### Prerequisites
 
-- Install Node JS in your computer  [**HERE**](https://nodejs.org/en/)
--  Install NextJS in your project [**HERE**](https://nextjs.org/docs/getting-started/installation)
-- Sign up for a Cloudinary account  [**HERE** ](https://cloudinary.com/)
-- Sign up for a Google Cloud Platform  [**HERE**](https://console.cloud.google.com/welcome?project=airbnb-clone-423718)
--  Sign up for a Facebook  [**HERE**](https://developers.facebook.com/)
-- Install Node JS in your computer  [**HERE**](https://nodejs.org/en/)
+- Install Node JS in your computer       [**HERE**](https://nodejs.org/en/)
+-  Install ReactJS in your project       [**HERE**](https://vitejs.dev/guide/)
+- Sign up for a TailwindCss              [**HERE** ](https://tailwindcss.com/docs/guides/vite)
+- Install Node JS in your computer       [**HERE**](https://nodejs.org/en/)
 
 
 ## Run Locally
