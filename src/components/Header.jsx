@@ -92,7 +92,7 @@ function Header() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
-      className={`bg-[#bfbddb] py-3 w-full z-10 transition-all duration-300 ${
+      className={`bg-[#6f91ff] py-3 w-full z-10 transition-all duration-300 ${
         isScrolled ? "fixed top-0" : "relative"
       }`}
     >
@@ -107,9 +107,9 @@ function Header() {
         <SearchInput handleSearch={handleChange} />
 
         {/* Cart icon with item count */}
-        <div className="relative">
+        <div className="relative cursor-pointer">
           <FaCartArrowDown size={30} onClick={handleCloseBar} />
-          <div className="absolute left-6 top-[-10px] bg-white rounded-full w-7 h-7 text-center flex items-center justify-center">
+          <div className="absolute left-6 top-[-10px] bg-white rounded-full w-7 h-7 text-center flex items-center justify-center ">
             {itemCount}
           </div>
         </div>

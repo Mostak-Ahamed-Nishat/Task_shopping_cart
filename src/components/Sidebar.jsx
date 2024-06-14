@@ -23,7 +23,7 @@ function Sidebar({ items, handleCloseBar }) {
         initial={{ x: "100%" }}
         animate={{ x: 0 }}
         exit={{ x: "100%" }}
-        transition={{ duration: .5 }}
+        transition={{ duration: 0.5 }}
       >
         <div className="px-10 py-8 flex justify-between">
           <h3 className="text-xl font-bold"> Cart Items</h3>
@@ -59,21 +59,31 @@ function Sidebar({ items, handleCloseBar }) {
                           <RxCross1 />
                         </button>
                       </div>
-                      <p className="mt-1 text-sm text-gray-500 font-bold">{product.brand}</p>
+                      <p className="mt-1 text-sm text-gray-500 font-bold">
+                        {product.brand}
+                      </p>
                     </div>
                     <div className="flex flex-1 items-end justify-between text-sm">
                       <div className="flex">
-                        <p className="text-md font-bold">${product.totalPrice}</p>
+                        <p className="text-md font-bold">
+                          ${product.totalPrice}
+                        </p>
                       </div>
                       <div className="flex gap-2 items-center">
                         <FaMinus
                           size={17}
-                          onClick={() => dispatch(decrementQuantity(product.id))}
+                          onClick={() =>
+                            dispatch(decrementQuantity(product.id))
+                          }
                           className="cursor-pointer"
                         />
-                        <p className="text-gray-500 text-md font-bold">{product.quantity}</p>
+                        <p className="text-gray-500 text-md font-bold">
+                          {product.quantity}
+                        </p>
                         <div
-                          onClick={() => dispatch(incrementQuantity(product.id))}
+                          onClick={() =>
+                            dispatch(incrementQuantity(product.id))
+                          }
                           className="cursor-pointer"
                         >
                           <FaPlus size={17} />
@@ -88,9 +98,20 @@ function Sidebar({ items, handleCloseBar }) {
           </div>
         </div>
         {items.length > 0 ? (
-          <div className="px-10 flex justify-between py-4">
-            <span className="font-bold text-xl">Total Price :</span>
-            <span className="font-bold text-xl"> ${totalPrice.toFixed(2)}</span>
+          <div>
+            <div className="px-10 flex justify-between py-4">
+              <span className="font-bold text-xl">Total Price :</span>
+              <span className="font-bold text-xl">
+                {" "}
+                ${totalPrice.toFixed(2)}
+              </span>
+            </div>
+
+            <div className="flex justify-center py-8">
+              <button className=" rounded-md bg-[#6f91ff] px-20 py-2.5 text-center text-md font-medium text-white  outline-none border-none">
+                Check out
+              </button>
+            </div>
           </div>
         ) : (
           <p className="px-10">Cart Empty</p>

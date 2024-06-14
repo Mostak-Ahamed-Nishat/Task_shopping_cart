@@ -32,13 +32,13 @@ function Products() {
   return (
     <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 px-10">
       {products.map((product) => (
-        <div key={product.id} className="p-6 bg-slate-50 rounded-lg">
+        <div key={product.id} className="p-6 bg-slate-50 rounded-lg hover:shadow-md">
           <a href={product.href} className="group">
             <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
               <img
                 src={product.thumbnail}
                 alt={product.imageAlt}
-                className="h-full w-full object-cover object-center group-hover:opacity-75"
+                className="h-full w-full object-cover object-center group-hover:cursor-pointer"
               />
             </div>
             <h3 className="text-xl pt-4 pb-2 tracking-tight text-slate-900">
@@ -61,7 +61,7 @@ function Products() {
             </div>
             <a
               href=""
-              className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white  outline-none border-none"
+              className="flex items-center justify-center rounded-md bg-[#6f91ff] px-5 py-2.5 text-center text-sm font-medium text-white  outline-none border-none"
               onClick={(e) => addToCartHandler(e, product)}
             >
               <svg

@@ -1,9 +1,7 @@
 function Filter() {
   return (
     <div>
-      <div>
-        Hello
-      </div>
+      <div>Filter Products</div>
     </div>
   );
 }
